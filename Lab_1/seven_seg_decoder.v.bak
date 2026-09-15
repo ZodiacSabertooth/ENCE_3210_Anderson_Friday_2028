@@ -1,0 +1,32 @@
+module seven_seg_decoder (
+	 input [2:0] c,
+	 output [0:6] Disp
+);
+	 wire c2, c1, c0;
+	 assign c2 = c[2];
+	 assign c1 = c[1];
+	 assign c0 = c[0];
+	 
+	 // Segment 0: OFF for H and Blank
+    assign Display[0] = c2 | ~c0;
+
+    // Segment 1: OFF for E, L, and Blank
+    assign Display[1] = c2 | (c1 ^ c0);
+
+    // Segment 2: OFF for E, L, and Blank
+    assign Display[2] = c2 | (c1 ^ c0);
+
+    // Segment 3: OFF for H and Blank
+    assign Display[3] = c2 | (~c1 & ~c0);
+
+    // Segment 4: OFF only for Blank
+    assign Display[4] = c2;
+
+    // Segment 5: OFF only for Blank
+    assign Display[5] = c2;
+
+    // Segment 6: OFF for L, O, and Blank
+    assign Display[6] = c2 | c1;
+
+endmodule
+	 
