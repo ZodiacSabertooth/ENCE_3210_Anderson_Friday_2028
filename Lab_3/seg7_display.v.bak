@@ -1,0 +1,6 @@
+module seg7_display(
+	input [3:0] SW,
+	output [7:0] seg_disp
+);
+
+endmodule

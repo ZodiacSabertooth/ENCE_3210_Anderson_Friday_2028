@@ -1,0 +1,11 @@
+modele d_ff(
+	input d, clk,
+	output q, q_n
+);
+
+	wire q_m
+	
+	d_latch lead (.D(d), .clk(~clk), .Q(q_m), .Q_n(1'b0);
+	d_latch tail (.D(q_m), .clk(clk), .Q(q),. q_n(q_n);
+	
+endmodule

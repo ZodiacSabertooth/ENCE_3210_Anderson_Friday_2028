@@ -1,0 +1,25 @@
+module part4_circuit (
+	input D, clk,
+	output reg Qa, Qb, Qc
+);
+
+		
+	always @(D, clk) begin
+		if (clk) begin
+			Qa <= D;
+		end
+	end
+	
+	always @(posedge clk) begin
+		if (clk) begin
+			Qb <= D
+		end
+	end
+	
+	always @(negedge clk) begin
+		if (clk) begin
+			Qc <= D
+		end
+	end
+	
+endmodule

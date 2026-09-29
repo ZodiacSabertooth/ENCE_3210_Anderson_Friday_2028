@@ -1,0 +1,11 @@
+module dff_neg (
+	input D, clk,
+	output reg Q
+);
+
+
+	always @(negedge clk) begin
+		if (clk) begin
+			Qb <= D;
+		end
+	end
