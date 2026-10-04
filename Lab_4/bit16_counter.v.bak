@@ -1,0 +1,12 @@
+module bit16_counter (
+	input ena, clk, rst_n,
+	output reg [15:0] q
+);
+
+    always @(posedge clk) begin
+        if (~reset_n)
+            q <= 16'd0;
+        else if (enable)
+            q <= q + 16'd1;
+    end
+endmodule

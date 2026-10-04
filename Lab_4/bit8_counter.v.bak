@@ -1,0 +1,26 @@
+module bit8_counter (
+	input ena, clk, clear,
+	output [7:0] count
+);
+
+	wire [6:0] w_a;
+	wire [7:0] w_o;
+	
+	assign w_a[0] = ena & w_o[0];
+	assign w_a[1] = w_a[0] & w_o[1];
+	assign w_a[2] = w_a[1] & w_o[2];
+	assign w_a[3] = w_a[2] & w_o[3];
+	assign w_a[4] = w_a[3] & w_o[4];
+	assign w_a[5] = w_a[4] & w_o[5];
+	assign w_a[6] = w_a[5] & w_o[6];
+	
+	T_ff t0 (.T(ena), .clk(clk), .clear(clear), .Qt(w_o[0]));
+	T_ff t1 (.T(w_a[0]), .clk(clk), .clear(clear), .Qt(w_0[1]));
+	T_ff t2 (.T(w_a[1]), .clk(clk), .clear(clear), .Qt(w_0[2]));
+	T_ff t3 (.T(w_a[2]), .clk(clk), .clear(clear), .Qt(w_0[3]));
+	T_ff t4 (.T(w_a[3]), .clk(clk), .clear(clear), .Qt(w_0[4]));
+	T_ff t5 (.T(w_a[4]), .clk(clk), .clear(clear), .Qt(w_0[5]));
+	T_ff t6 (.T(w_a[5]), .clk(clk), .clear(clear), .Qt(w_0[6]));
+	T_ff t7 (.T(w_a[6]), .clk(clk), .clear(clear), .Qt(w_0[7]));
+	
+endmodule

@@ -1,0 +1,9 @@
+module FullAdder(
+	input A, B, C_i,
+	output Sum, C_o
+);
+
+	assign Sum = A ^ B ^ C_i;
+	assign C_o = (A & B) | (C_i & ( A ^ B));
+	
+endmodule

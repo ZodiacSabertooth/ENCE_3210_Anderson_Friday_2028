@@ -1,0 +1,14 @@
+module bit8_adder (
+	input [7:0] A, B, C_i,
+	output [7:0] Sum, C_o
+);
+
+	genvar i;
+	
+	generate 
+		for (i = 0; i < 8; i = i + 1) begin: gen_and8
+			assign Sum[i] = A[i] ^ B[i] ^ C_i[i];
+			assign C_o[i] = (A[i] & B[i]) | (C_i[i] & ( A[i] ^ B[i]));
+		end
+	endgenerate
+endmodule
