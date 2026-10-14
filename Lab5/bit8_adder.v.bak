@@ -1,0 +1,9 @@
+module bit8_adder (
+	input [7:0] a, sum, next_sum,
+	output c_o, overflow
+);
+
+	assign {c_o, sum} = a + next_sum;
+
+endmodule
+	
