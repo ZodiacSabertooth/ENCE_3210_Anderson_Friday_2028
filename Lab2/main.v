@@ -10,6 +10,19 @@ module main(
 	output	[7:0]		HEX4,
 	output	[7:0]		HEX5
 );
+//	// Part I
+//	assign LEDR = SW;
+//
+//    // Part I: Decode 4-bit switch inputs to 7-segment displays
+//   Seg7_Decoder dec0 (.m(SW[3:0]), .out(HEX0));
+//   Seg7_Decoder dec1 (.m(SW[7:4]), .out(HEX1));
+//
+//    // Turn off unused displays (active-low segments: 8'hFF = all OFF)
+//   assign HEX2 = 8'hFF;
+//   assign HEX3 = 8'hFF;
+//   assign HEX4 = 8'hFF;
+//   assign HEX5 = 8'hFF;
+	
 //	// PART II
 //	wire [3:0] w_m;
 //	
